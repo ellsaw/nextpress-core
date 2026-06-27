@@ -1,4 +1,4 @@
-import { DB, WpOption } from "../../types/wpdb/wpdb";
+import { DB, WpOption } from "../../wpdb/wpdb.interface";
 
 /**
  * Defines the arguments for querying options.

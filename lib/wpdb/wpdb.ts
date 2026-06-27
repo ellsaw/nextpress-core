@@ -1,4 +1,4 @@
-import { DB } from '../types/wpdb/wpdb'
+import { DB } from './wpdb.interface'
 import { createPool } from 'mysql2'
 import { CamelCasePlugin, DeduplicateJoinsPlugin, Kysely, MysqlDialect } from 'kysely'
 

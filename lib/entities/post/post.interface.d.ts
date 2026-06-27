@@ -1,5 +1,5 @@
 import { Selectable } from "kysely";
-import { WpPost } from "../../types/wpdb/wpdb";
+import { WpPost } from "../../wpdb/wpdb.interface";
 import { IFieldLocation, IPath } from "../common";
 
 /**

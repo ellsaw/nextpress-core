@@ -1,5 +1,5 @@
 import { Selectable } from "kysely";
-import { WpOption } from "../../types/wpdb/wpdb";
+import { WpOption } from "../../wpdb/wpdb.interface";
 import { IFieldLocation } from "../common";
 
 /**

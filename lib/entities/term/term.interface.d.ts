@@ -1,5 +1,5 @@
 import { Selectable } from "kysely";
-import { WpTerm, WpTermTaxonomy } from "../../types/wpdb/wpdb";
+import { WpTerm, WpTermTaxonomy } from "../../wpdb/wpdb.interface";
 import { IPath } from "../common";
 
 /**

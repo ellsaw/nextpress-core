@@ -1,5 +1,5 @@
 import { QueryCreator } from "kysely";
-import { DB } from "../../types/wpdb/wpdb";
+import { DB } from "../../wpdb/wpdb.interface";
 import { EntityQuery } from "../../globals/entity-loader/entity-loader";
 import { ITerm } from "../../entities/term/term.interface";
 import { wpdb } from "@/wpdb/wpdb";

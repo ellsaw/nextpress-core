@@ -1,5 +1,5 @@
 import { Selectable } from "kysely";
-import { WpUser } from "../../types/wpdb/wpdb";
+import { WpUser } from "../../wpdb/wpdb.interface";
 
 /**
  * Represents user entity.
