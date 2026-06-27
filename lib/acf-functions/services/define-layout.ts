@@ -1,0 +1,10 @@
+/**
+ * Defines layout configuration and applies typing.
+ *
+ * @template T - Layout type extending NextpressLayout.
+ * @param {T} layout - Layout configuration object.
+ * @returns {T} Passed layout configuration object.
+ */
+export function defineLayout<const T extends NextpressLayout>(layout: T): T {
+    return layout;
+}
