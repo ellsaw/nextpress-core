@@ -43,7 +43,7 @@ export async function generateNextpressMetadata({ params }: NextpressRouterProps
  * @param {NextpressRouterProps} props - The dynamic properties for this page route.
  * @returns {Promise<JSX.Element>} The rendered React component mapping to the matched route's template.
  */
-export default async function NextPressPage({ params }: NextpressRouterProps) {
+export async function NextPressPage({ params }: NextpressRouterProps) {
     const path = (await params).path ?? [];
 
     if (!path.length) {

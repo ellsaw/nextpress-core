@@ -1,6 +1,6 @@
 {
   "name": "nextpress-core",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Nextpress Core",
   "keywords": [],
   "scripts": {
@@ -10,9 +10,37 @@
     "dist"
   ],
   "exports": {
-    "./*": {
-      "types": "./dist/*.d.ts",
-      "import": "./dist/*.js"
+    "./acf-functions": {
+      "types": "./dist/acf-functions/index.d.ts",
+      "import": "./dist/acf-functions/index.js"
+    },
+    "./entities": {
+      "types": "./dist/entities/index.d.ts",
+      "import": "./dist/entities/index.js"
+    },
+    "./globals": {
+      "types": "./dist/globals/index.d.ts",
+      "import": "./dist/globals/index.js"
+    },
+    "./repository": {
+      "types": "./dist/repository/index.d.ts",
+      "import": "./dist/repository/index.js"
+    },
+    "./router": {
+      "types": "./dist/router/index.d.ts",
+      "import": "./dist/router/index.js"
+    },
+    "./services": {
+      "types": "./dist/services/index.d.ts",
+      "import": "./dist/services/index.js"
+    },
+    "./ui": {
+      "types": "./dist/ui/index.d.ts",
+      "import": "./dist/ui/index.js"
+    },
+    "./wpdb": {
+      "types": "./dist/wpdb/index.d.ts",
+      "import": "./dist/wpdb/index.js"
     }
   },
   "author": "",
