@@ -1,6 +1,6 @@
 import { User } from "@/entities/user/user";
 import { IUser } from "../../entities/user/user.interface";
-import { EntityLoader } from "./entity-loader";
+import { EntityLoader } from "./entity-loader.interface";
 import { EntityLoaderBase } from "./entity-loader-base";
 import { UserQuery } from "@/repository/userquery/user-query";
 

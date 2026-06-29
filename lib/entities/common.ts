@@ -9,7 +9,7 @@ export interface IPath {
 /**
  * Array of field key-value pairs.
  */
-type Fields = {
+export type Fields = {
     /** Field key. */
     key: string,
     /** Field value. */

@@ -1,5 +1,5 @@
 import { ComparisonOperatorExpression } from "kysely";
-import { EntityQuery } from "../../globals/entity-loader/entity-loader";
+import { EntityQuery } from "../../globals/entity-loader/entity-loader.interface";
 import { OptionQueryArgs } from "./option-query-args";
 import { IOption } from "../../entities/option/option.interface";
 import { wpdb } from "@/wpdb/wpdb";

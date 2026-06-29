@@ -1,3 +1,5 @@
+import { NextpressFieldGroup } from "../types/acf-field-group";
+
 /**
  * Defines field group configuration and applies typing.
  *

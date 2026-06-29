@@ -24,7 +24,7 @@ export type FieldProps<LayoutT> =
  *
  * @template Fields - A readonly array of ACF field configuration objects.
  */
-type ResolvedFields<Fields extends readonly any[]> = {
+export type ResolvedFields<Fields extends readonly any[]> = {
     [F in Fields[number] as F['name']]: MapFieldType<F>
 };
 
@@ -35,7 +35,7 @@ type ResolvedFields<Fields extends readonly any[]> = {
  *
  * @template Layouts - A readonly array of ACF Flexible Content layout configuration objects.
  */
-type ResolvedFlexibleContent<Layouts extends readonly any[]> = {
+export type ResolvedFlexibleContent<Layouts extends readonly any[]> = {
     [L in Layouts[number] as L['name']]: L extends { name: infer Name } & ({ fields: readonly any[] } | { sub_fields: readonly any[] })
         ? {
             Component: () => Promise<JSX.Element>,
@@ -154,23 +154,23 @@ type MapFieldType<Field> =
         ? ResolvedFields<GetFields<Field>>
     : never;
 
-type ACFIconObject = {
+export type ACFIconObject = {
     type: string,
     value: string
 }
 
-type ACFLinkObject = {
+export type ACFLinkObject = {
     title: string,
     url: string,
     target: string
 }
 
-type ACFChoiceObject = {
+export type ACFChoiceObject = {
     label?: string
     value?: string,
 }
 
-type ACFGoogleMapsObject = {
+export type ACFGoogleMapsObject = {
     address: string;
     lat: string | number;
     lng: string | number;

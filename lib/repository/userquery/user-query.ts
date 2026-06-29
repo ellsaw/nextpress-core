@@ -1,6 +1,6 @@
 import { wpdb } from "@/wpdb/wpdb";
 import { IUser } from "../../entities/user/user.interface";
-import { EntityQuery } from "../../globals/entity-loader/entity-loader";
+import { EntityQuery } from "../../globals/entity-loader/entity-loader.interface";
 import { sql } from "kysely";
 
 /**

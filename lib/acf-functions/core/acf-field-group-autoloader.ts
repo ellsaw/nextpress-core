@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { NextpressFieldGroup } from '../types/acf-field-group';
 
 /**
  * Autoloads ACF field groups dynamically from the field-groups directory.

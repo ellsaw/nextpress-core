@@ -5,7 +5,7 @@ import { IFieldLocation, IPath } from "../common";
 /**
  * Attributes for post attachment images.
  */
-type PostImageAttributes = {
+export type PostImageAttributes = {
     /** Image source URL. */
     src?: string,
     /** Image alternative text. */
@@ -19,7 +19,7 @@ type PostImageAttributes = {
 /**
  * Attributes for nav menu items.
  */
-type MenuItemAttributes = {
+export type MenuItemAttributes = {
     /** Menu item label. */
     label: string,
     /** Menu item type. */
@@ -35,17 +35,17 @@ type MenuItemAttributes = {
 /**
  * Base post properties.
  */
-interface IBasePost extends Selectable<WpPost> {}
+export interface IBasePost extends Selectable<WpPost> {}
 
 /**
  * Page post properties.
  */
-interface IPagePost extends IBasePost, IPath {}
+export interface IPagePost extends IBasePost, IPath {}
 
 /**
  * Standard post properties.
  */
-interface IPostPost extends IBasePost, IPath {
+export interface IPostPost extends IBasePost, IPath {
     /** Featured image attachment ID. */
     thumbnailId: number,
 }
@@ -53,7 +53,7 @@ interface IPostPost extends IBasePost, IPath {
 /**
  * Attachment post properties.
  */
-interface IAttachmentPost extends IBasePost {
+export interface IAttachmentPost extends IBasePost {
     /** Image attributes. */
     imageAttributes: PostImageAttributes,
 }
@@ -61,7 +61,7 @@ interface IAttachmentPost extends IBasePost {
 /**
  * Menu item properties.
  */
-interface IMenuItem extends IBasePost {
+export interface IMenuItem extends IBasePost {
     /** Menu item attributes. */
     menuItemAttributes: MenuItemAttributes | null
 }
@@ -69,4 +69,4 @@ interface IMenuItem extends IBasePost {
 /**
  * Comprehensive post entity encompassing all post types.
  */
-interface IPost extends IBasePost, IPagePost, IPostPost, IAttachmentPost, IMenuItem, IFieldLocation {};
+export interface IPost extends IBasePost, IPagePost, IPostPost, IAttachmentPost, IMenuItem, IFieldLocation {};

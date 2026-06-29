@@ -1,3 +1,5 @@
+import { NextpressLayout } from "../types/acf-layout";
+
 /**
  * Defines layout configuration and applies typing.
  *

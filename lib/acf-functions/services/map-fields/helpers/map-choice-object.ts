@@ -1,6 +1,6 @@
 import { ACFChoiceObject } from "@/acf-functions/types/components/field-props";
 
-export function mapChoiceObject(return_format: 'array' | 'label' | 'value', value?: string, choices?: Choices): ACFChoiceObject | string | undefined {
+export function mapChoiceObject(return_format: 'array' | 'label' | 'value', value?: string, choices?: any): ACFChoiceObject | string | undefined {
     if (return_format === 'value') {
         return value;
     }

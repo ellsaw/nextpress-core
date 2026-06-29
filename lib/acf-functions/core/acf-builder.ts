@@ -1,3 +1,7 @@
+import { NextpressField, ACFField } from "../types/acf-field";
+import { ACFFieldGroup, NextpressFieldGroup } from "../types/acf-field-group";
+import { NextpressLayout, ACFLayout } from "../types/acf-layout";
+
 /**
  * Class representing ACF builder.
  */

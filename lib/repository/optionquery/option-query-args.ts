@@ -1,13 +1,14 @@
-import { DB, WpOption } from "../../wpdb/wpdb.interface";
+import { DB } from "@/wpdb/wpdb.interface";
+import { ComparisonOperatorExpression, ReferenceExpression } from "kysely";
 
 /**
  * Defines the arguments for querying options.
  */
-interface OptionQueryArgs {
+export interface OptionQueryArgs {
     /**
      * Database column reference to query against.
      */
-    column: ReferenceExpression<DB, WpOption>;
+    column: ReferenceExpression<DB, "wpOptions">;
 
     /**
      * Comparison operator for the query.

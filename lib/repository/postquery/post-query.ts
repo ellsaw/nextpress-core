@@ -1,7 +1,7 @@
 import { QueryCreator, sql } from "kysely";
 import { DB } from "../../wpdb/wpdb.interface";
 import * as phpSerialize from "php-serialize";
-import { EntityQuery } from "../../globals/entity-loader/entity-loader";
+import { EntityQuery } from "../../globals/entity-loader/entity-loader.interface";
 import { IPost } from "../../entities/post/post.interface";
 import { wpdb } from "@/wpdb/wpdb";
 

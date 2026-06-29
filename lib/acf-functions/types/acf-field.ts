@@ -1,3 +1,5 @@
+import { NextpressLayout, ACFLayout } from "./acf-layout";
+
 type TransformACFField<T> = T extends any
     ? Omit<T, 'key' | 'layouts' | 'sub_fields'> & {
         key?: never;
@@ -7,12 +9,12 @@ type TransformACFField<T> = T extends any
     : never;
 
 /** ACF Field without key constraints to allow key generation */
-type NextpressField = TransformACFField<ACFField>;
+export type NextpressField = TransformACFField<ACFField>;
 
 /**
  * Represents a single Advanced Custom Fields (ACF) Field configuration.
  */
-type ACFField =
+export type ACFField =
     | {
         /**
          * Unique identifier for the field with field_ prefix (e.g. 'field_abc123')

@@ -1,15 +1,17 @@
+import { NextpressField, ACFField } from "./acf-field";
+
 type TransformACFFieldGroup<T> = T extends any
     ? Omit<T, 'key' | 'fields'> &
         ('fields' extends keyof T ? { fields: NextpressField[] } : [])
     : never;
 
 /** ACF Field Group without key constraints to allow key generation */
-type NextpressFieldGroup = TransformACFFieldGroup<ACFFieldGroup>
+export type NextpressFieldGroup = TransformACFFieldGroup<ACFFieldGroup>
 
 /**
  * Represents an Advanced Custom Fields (ACF) Field Group configuration.
  */
-interface ACFFieldGroup {
+export interface ACFFieldGroup {
     /**
      * Unique identifier for the field group with group_ prefix (e.g. 'group_abc123')
      */
@@ -99,9 +101,9 @@ interface ACFFieldGroup {
 /**
  * Group of location rules (AND logic within group)
  */
-type ACFLocationGroup = [ACFLocationRule, ...ACFLocationRule[]]
+export type ACFLocationGroup = [ACFLocationRule, ...ACFLocationRule[]]
 
-interface ACFLocationRule {
+export interface ACFLocationRule {
     /**
      * The parameter to compare (e.g. 'post_type', 'page_template', 'user_role')
      */

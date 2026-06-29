@@ -1,6 +1,6 @@
 import { Post } from "@/entities/post/post";
 import { IPost } from "../../entities/post/post.interface";
-import { EntityLoader } from "./entity-loader";
+import { EntityLoader } from "./entity-loader.interface";
 import { EntityLoaderBase } from "./entity-loader-base";
 import { PostQuery } from "@/repository/postquery/post-query";
 

@@ -57,5 +57,5 @@ interface TermQueryArgs {
         as: string
     }[]
     /** Whether to get multiple, default true */
-    multiple?: bool
+    multiple?: boolean
 }

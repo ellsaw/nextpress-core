@@ -71,5 +71,5 @@ interface UserQueryArgs {
         as: string
     }[]
     /** Whether to get multiple, default false */
-    multiple?: bool
+    multiple?: boolean
 }
