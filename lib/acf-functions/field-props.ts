@@ -1,6 +1,6 @@
-import { IPost } from "@/lib/nextpress/entities/post/post.interface";
-import { ITerm } from "@/lib/nextpress/entities/term/term.interface";
-import { IUser } from "@/lib/nextpress/entities/user/user.interface";
+import { IPost } from "@/entities/post/post.interface";
+import { ITerm } from "@/entities/term/term.interface";
+import { IUser } from "@/entities/user/user.interface";
 import { JSX } from "react";
 
 type GetFields<T> =
@@ -13,7 +13,7 @@ type GetFields<T> =
  *
  * @template T - The expected type of the mapped ACF fields.
  */
-type FieldProps<LayoutT> =
+export type FieldProps<LayoutT> =
     LayoutT extends { fields: readonly any[] } | { sub_fields: readonly any[] }
         ? ResolvedFields<GetFields<LayoutT>>
     : never;
