@@ -24,7 +24,7 @@ type AdminBarResponse = {
 /**
  * Renders the WordPress admin bar for authenticated administrators browsing the Next.js frontend.
  */
-export function RenderTheAdminBar({ loggedInUserId }: Props) {
+export async function RenderTheAdminBar({ loggedInUserId }: Props) {
     const [adminBar, setAdminBar] = useState<AdminBarResponse | null>(null);
     const [isMounted, setIsMounted] = useState(false);
 

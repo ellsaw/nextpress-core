@@ -8,7 +8,7 @@
   ],
   "exports": {
     "./*": {
-      "import": "./lib/*.ts"
+      "import": "./lib/*.{ts,tsx}"
     }
   },
   "author": "",
