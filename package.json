@@ -1,14 +1,18 @@
 {
   "name": "nextpress-core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Nextpress Core",
   "keywords": [],
+  "scripts": {
+    "build": "tsc"
+  },
   "files": [
-    "lib"
+    "dist"
   ],
   "exports": {
     "./*": {
-      "import": "./lib/*.{ts,tsx}"
+      "types": "./dist/*.d.ts",
+      "import": "./dist/*.js"
     }
   },
   "author": "",
