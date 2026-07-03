@@ -1,5 +1,5 @@
-import { DB } from "@/wpdb/wpdb.interface";
 import { ComparisonOperatorExpression, ReferenceExpression } from "kysely";
+import { DB } from "nextpress/wpdb/wpdb.interface";
 
 /**
  * Defines the arguments for querying options.
@@ -8,7 +8,7 @@ export interface OptionQueryArgs {
     /**
      * Database column reference to query against.
      */
-    column: ReferenceExpression<DB, "wpOptions">;
+    column: ReferenceExpression<DB, 'wpOptions'>;
 
     /**
      * Comparison operator for the query.

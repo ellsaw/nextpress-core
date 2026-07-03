@@ -1,6 +1,7 @@
-declare module '*nextpress.config' {
-    const nextpressConfig: NextpressConfig;
-    export default nextpressConfig;
+declare module '@/nextpress.config' {
+    type NextpressConfig = import('nextpress/globals/nextpress-config/nextpress-config.interface').NextpressConfig;
+
+    export const nextpressConfig: NextpressConfig
 }
 
 declare module '@/fonts' {

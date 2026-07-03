@@ -1,4 +1,4 @@
-type NextpressConfig = {
+export type NextpressConfig = {
     /** Custom taxonomies used to categorize and group content (like categories or tags). Expects the taxonomy's URL prefix, so tag instead of post_tag */
     readonly publicTaxonomies?: string[],
 

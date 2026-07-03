@@ -1,4 +1,4 @@
-import { ResolvedFlexibleContent } from "@/acf-functions/types/components/field-props"
+import { ResolvedFlexibleContent } from "../acf-functions/types/components/field-props";
 
 type Props = {
     layouts: ResolvedFlexibleContent<any>,

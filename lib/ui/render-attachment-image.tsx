@@ -1,10 +1,9 @@
-import { ClassValue } from "clsx";
 import Image from "next/image";
 import { ComponentPropsWithoutRef } from "react";
 
 type Props = Omit<ComponentPropsWithoutRef<typeof Image>, "src" | "alt" | "height" | "width"> & {
     attachmentId: number;
-    className?: ClassValue;
+    className?: string;
 };
 
 /**

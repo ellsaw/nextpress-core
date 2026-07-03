@@ -1,8 +1,8 @@
 import { unserialize } from "php-serialize";
 import { Fields } from "../common";
 import { IPost, PostImageAttributes, MenuItemAttributes } from "./post.interface";
-import { processURL } from "@/services/utilities/process-url";
-import { wpdb } from "@/wpdb/wpdb";
+import { processURL } from "nextpress/services/utilities/process-url";
+import { wpdb } from "nextpress/wpdb/wpdb";
 
 const excerptLength = nextpressConfig.excerptLength ?? 55;
 

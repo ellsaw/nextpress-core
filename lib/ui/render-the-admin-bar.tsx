@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Script from "next/script";
-import { wpKsesPost } from "@/services/utilities/kses-post";
+import { ksesPost } from "nextpress/services/utilities/kses-post";
 
 type Props = {
     loggedInUserId?: number
@@ -24,7 +24,7 @@ type AdminBarResponse = {
 /**
  * Renders the WordPress admin bar for authenticated administrators browsing the Next.js frontend.
  */
-export async function RenderTheAdminBar({ loggedInUserId }: Props) {
+export function RenderTheAdminBar({ loggedInUserId }: Props) {
     const [adminBar, setAdminBar] = useState<AdminBarResponse | null>(null);
     const [isMounted, setIsMounted] = useState(false);
 
@@ -72,7 +72,7 @@ export async function RenderTheAdminBar({ loggedInUserId }: Props) {
                         : "scale-y-0"
                 }`}
             >
-                {wpKsesPost(adminBar.html)}
+                {ksesPost(adminBar.html)}
             </div>
         </>
     );

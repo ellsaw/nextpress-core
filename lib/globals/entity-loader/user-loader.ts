@@ -1,8 +1,9 @@
-import { User } from "@/entities/user/user";
 import { IUser } from "../../entities/user/user.interface";
-import { EntityLoader } from "./entity-loader.interface";
+import { User } from "../../entities/user/user";
+import { EntityLoader } from "./entity-loader";
 import { EntityLoaderBase } from "./entity-loader-base";
-import { UserQuery } from "@/repository/userquery/user-query";
+import { UserQueryArgs } from "nextpress/repository/userquery/user-query-args";
+import { UserQuery } from "nextpress/repository/userquery/user-query";
 
 class UserLoader extends EntityLoaderBase<IUser, UserQueryArgs> {
     private static _instance: UserLoader;

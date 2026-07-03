@@ -1,5 +1,5 @@
-import { NotFoundMetadata, NotFoundTemplate } from "@/template-heirarchy/not-found.tsx/not-found";
 import { Metadata } from "next";
+import { NotFoundMetadata, NotFoundTemplate } from "nextpress/template-heirarchy/not-found.tsx/not-found";
 
 /**
  * Generates the metadata for the generic Not Found page.
@@ -7,7 +7,7 @@ import { Metadata } from "next";
  *
  * @returns {Promise<Metadata>} The generated metadata object.
  */
-export async function notFoundMetadata(): Promise<Metadata> {
+export async function NextpressNotFoundMetadata(): Promise<Metadata> {
     return await NotFoundMetadata();
 }
 
@@ -17,6 +17,6 @@ export async function notFoundMetadata(): Promise<Metadata> {
  *
  * @returns {Promise<JSX.Element>} The rendered Not Found template.
  */
-export async function NotFoundPage() {
+export async function NextpressNotFoundRoute() {
     return <NotFoundTemplate/>
 }

@@ -101,9 +101,9 @@ export interface ACFFieldGroup {
 /**
  * Group of location rules (AND logic within group)
  */
-export type ACFLocationGroup = [ACFLocationRule, ...ACFLocationRule[]]
+type ACFLocationGroup = [ACFLocationRule, ...ACFLocationRule[]]
 
-export interface ACFLocationRule {
+interface ACFLocationRule {
     /**
      * The parameter to compare (e.g. 'post_type', 'page_template', 'user_role')
      */

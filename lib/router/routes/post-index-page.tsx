@@ -1,7 +1,7 @@
 import { MetadataResult, RouteProps, TemplateResult } from "../types";
 import { getPageNumber } from "../helpers";
-import { queriedObjectState } from "@/globals/globals";
-import { HomeMetadata, HomeTemplate } from "@/template-heirarchy/home/home";
+import { queriedObjectState } from "nextpress/globals/globals";
+import { HomeMetadata, HomeTemplate } from "nextpress/template-heirarchy/home/home";
 
 /**
  * Resolves the post index page (blog home) route and maps it to the template hierarchy to return Metadata.

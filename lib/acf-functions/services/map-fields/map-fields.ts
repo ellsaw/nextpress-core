@@ -1,11 +1,11 @@
 import { unserialize } from "php-serialize";
 import { acfComponentAutoloader } from "../../core/acf-component-autoloader";
+import { ACFGoogleMapsObject, ACFIconObject, ACFLinkObject } from "nextpress/acf-functions/types/components/field-props";
+import { NextpressField } from "nextpress/acf-functions/types/acf-field";
+import { NextpressLayout } from "nextpress/acf-functions/types/acf-layout";
+import { ACFRawValues } from "nextpress/acf-functions/types/acf-values";
 import { mapChoiceObject } from "./helpers/map-choice-object";
-import { processURL } from "@/services/utilities/process-url";
-import { NextpressField } from "@/acf-functions/types/acf-field";
-import { NextpressLayout } from "@/acf-functions/types/acf-layout";
-import { ACFRawValues } from "@/acf-functions/types/acf-values";
-import { ACFGoogleMapsObject, ACFIconObject, ACFLinkObject } from "@/acf-functions/types/components/field-props";
+import { processURL } from "nextpress/services/utilities/process-url";
 
 const components = await acfComponentAutoloader();
 

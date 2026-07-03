@@ -1,6 +1,6 @@
-import { IPost } from "@/entities/post/post.interface";
-import { ITerm } from "@/entities/term/term.interface";
-import { IUser } from "@/entities/user/user.interface";
+import { IPost } from "nextpress/entities/post/post.interface";
+import { ITerm } from "nextpress/entities/term/term.interface";
+import { IUser } from "nextpress/entities/user/user.interface";
 import { JSX } from "react";
 
 type GetFields<T> =
@@ -24,7 +24,7 @@ export type FieldProps<LayoutT> =
  *
  * @template Fields - A readonly array of ACF field configuration objects.
  */
-export type ResolvedFields<Fields extends readonly any[]> = {
+type ResolvedFields<Fields extends readonly any[]> = {
     [F in Fields[number] as F['name']]: MapFieldType<F>
 };
 

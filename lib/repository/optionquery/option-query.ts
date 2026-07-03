@@ -1,8 +1,8 @@
 import { ComparisonOperatorExpression } from "kysely";
-import { EntityQuery } from "../../globals/entity-loader/entity-loader.interface";
+import { EntityQuery } from "../../globals/entity-loader/entity-loader";
 import { OptionQueryArgs } from "./option-query-args";
 import { IOption } from "../../entities/option/option.interface";
-import { wpdb } from "@/wpdb/wpdb";
+import { wpdb } from "nextpress/wpdb/wpdb";
 
 /**
  * Executes database queries to retrieve option IDs (or keys) based on provided arguments.

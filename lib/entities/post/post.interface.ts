@@ -1,6 +1,6 @@
 import { Selectable } from "kysely";
-import { WpPost } from "../../wpdb/wpdb.interface";
 import { IFieldLocation, IPath } from "../common";
+import { WpPost } from "nextpress/wpdb/wpdb.interface";
 
 /**
  * Attributes for post attachment images.

@@ -1,8 +1,8 @@
 import { headers } from "next/headers";
 import { NextResponse } from "next/server";
 import { isAuthorized } from "./helpers";
-import { acfFieldGroupAutoloader } from "@/acf-functions/core/acf-field-group-autoloader";
-import { ACFBuilder } from "@/acf-functions/core/acf-builder";
+import { acfFieldGroupAutoloader } from "nextpress/acf-functions/core/acf-field-group-autoloader";
+import { ACFBuilder } from "nextpress/acf-functions/core/acf-builder";
 
 /**
  * Processes GET requests to retrieve built ACF field groups.

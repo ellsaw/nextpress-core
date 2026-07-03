@@ -7,7 +7,7 @@ type WPQueryOrderByParam =
  * Defines the arguments for querying posts.
  * Maps standard WordPress WP_Query parameters.
  */
-interface PostQueryArgs {
+export interface PostQueryArgs {
     /** Post ID. */
     postId?: number;
     /** An array of post IDs to retrieve, sticky posts will be included. */

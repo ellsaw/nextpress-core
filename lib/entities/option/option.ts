@@ -1,4 +1,4 @@
-import { wpdb } from "@/wpdb/wpdb";
+import { wpdb } from "nextpress/wpdb/wpdb";
 import { IOption } from "./option.interface";
 
 /**

@@ -1,8 +1,9 @@
 import { QueryCreator } from "kysely";
-import { DB } from "../../wpdb/wpdb.interface";
-import { EntityQuery } from "../../globals/entity-loader/entity-loader.interface";
+import { EntityQuery } from "../../globals/entity-loader/entity-loader";
 import { ITerm } from "../../entities/term/term.interface";
-import { wpdb } from "@/wpdb/wpdb";
+import { TermQueryArgs } from "./term-query-args";
+import { DB } from "nextpress/wpdb/wpdb.interface";
+import { wpdb } from "nextpress/wpdb/wpdb";
 
 /**
  * Executes database queries to retrieve term IDs based on provided arguments.

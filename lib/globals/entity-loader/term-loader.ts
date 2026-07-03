@@ -1,8 +1,9 @@
-import { Term } from "@/entities/term/term";
 import { ITerm } from "../../entities/term/term.interface";
-import { EntityLoader } from "./entity-loader.interface";
+import { Term } from "../../entities/term/term";
+import { EntityLoader } from "./entity-loader";
 import { EntityLoaderBase } from "./entity-loader-base";
-import { TermQuery } from "@/repository/termquery/term-query";
+import { TermQueryArgs } from "nextpress/repository/termquery/term-query-args";
+import { TermQuery } from "nextpress/repository/termquery/term-query";
 
 class TermLoader extends EntityLoaderBase<ITerm, TermQueryArgs> {
     private static _instance: TermLoader;

@@ -1,5 +1,5 @@
 import { Selectable } from "kysely";
-import { WpOption } from "../../wpdb/wpdb.interface";
+import { WpOption } from "nextpress/wpdb/wpdb.interface";
 
 /**
  * Represents option entity.

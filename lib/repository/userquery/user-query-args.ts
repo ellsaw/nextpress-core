@@ -2,7 +2,7 @@
  * Defines the arguments for querying users.
  * Maps standard WordPress WP_User_Query parameters.
  */
-interface UserQueryArgs {
+export interface UserQueryArgs {
     /** User ID, or array of user IDs, to match when querying terms. */
     userId?: number | number[];
     /** An array of user IDs to exclude. Default empty array. */

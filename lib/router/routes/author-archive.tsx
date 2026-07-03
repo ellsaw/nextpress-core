@@ -1,8 +1,8 @@
 import { MetadataResult, RouteProps, TemplateResult } from "../types";
 import { getPageNumber } from "../helpers";
 import { notFound } from "next/navigation";
-import { queriedObjectState } from "@/globals/globals";
-import { AuthorMetadata, AuthorTemplate } from "@/template-heirarchy/archive/author";
+import { queriedObjectState } from "nextpress/globals/globals";
+import { AuthorMetadata, AuthorTemplate } from "nextpress/template-heirarchy/archive/author";
 
 /**
  * Resolves the author archive route and maps it to the template hierarchy to return Metadata.

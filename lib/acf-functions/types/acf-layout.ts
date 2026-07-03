@@ -1,4 +1,4 @@
-import { ACFField, NextpressField } from "./acf-field";
+import { NextpressField, ACFField } from "./acf-field";
 
 type TransformACFLayout<T> = T extends any
     ? Omit<T, 'key' | 'sub_fields'> &

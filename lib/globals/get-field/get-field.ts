@@ -1,7 +1,7 @@
-import { NextpressFieldGroup } from "@/acf-functions/types/acf-field-group";
-import { FieldProps } from "@/acf-functions/types/components/field-props";
 import { mapField } from "../../acf-functions/services/map-fields/map-fields";
 import { IFieldLocation } from "../../entities/common";
+import { FieldProps } from "../../acf-functions/types/components/field-props";
+import { NextpressFieldGroup } from "nextpress/acf-functions/types/acf-field-group";
 
 /** Specifies location to retrieve fields from. */
 type Location = IFieldLocation | 'options';

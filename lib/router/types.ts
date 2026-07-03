@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { JSX } from "react/jsx-runtime";
+import { JSX } from "react";
 
 export type TemplateResult = JSX.Element;
 export type MetadataResult = Metadata;

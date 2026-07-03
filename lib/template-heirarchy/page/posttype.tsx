@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { JSX } from "react";
 import { loadMetadata, loadTemplate } from "../_autoloader/template-autoloader";
 import { SingularMetadata, SingularTemplate } from "./singular";
-import { capitalizeFirstLetter } from "@/services/utilities/capitalise-first-letter";
+import { capitalizeFirstLetter } from "nextpress/services/utilities/capitalise-first-letter";
 
 /**
  * Loads the metadata for a Post Type template based on the provided post type string.

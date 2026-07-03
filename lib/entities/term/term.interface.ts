@@ -1,6 +1,6 @@
 import { Selectable } from "kysely";
-import { WpTerm, WpTermTaxonomy } from "../../wpdb/wpdb.interface";
 import { IPath } from "../common";
+import { WpTerm, WpTermTaxonomy } from "nextpress/wpdb/wpdb.interface";
 
 /**
  * Represents term entity.

@@ -1,4 +1,4 @@
-import { EntityLoader, EntityQuery } from "./entity-loader.interface";
+import { EntityLoader, EntityQuery } from "./entity-loader";
 import { queriedObjectState } from "../globals";
 
 /**

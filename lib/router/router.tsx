@@ -1,4 +1,3 @@
-import "../globals/globals";
 import { Metadata } from "next";
 import { AuthorArchive } from "./routes/author-archive";
 import { SingularPage } from "./routes/singular-page";
