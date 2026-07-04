@@ -1,4 +1,4 @@
-import { OptionQuery } from "nextpress/repository/optionquery/option-query";
+import { OptionQuery } from "@nextpress/repository/optionquery/option-query";
 import { Option } from "../../entities/option/option";
 import { IOption } from "../../entities/option/option.interface";
 import { OptionQueryArgs } from "../../repository/optionquery/option-query-args";

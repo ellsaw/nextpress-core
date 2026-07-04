@@ -2,9 +2,9 @@ import { MetadataResult, RouteProps, TemplateResult } from "../types";
 import { PostIndexPage } from "./post-index-page";
 import { getPageNumber } from "../helpers";
 import { notFound } from "next/navigation";
-import { queriedObjectState } from "nextpress/globals/globals";
-import { SingleMetadata, SingleTemplate } from "nextpress/template-heirarchy/page/single";
-import { PageMetadata, PageTemplate } from "nextpress/template-heirarchy/page/page";
+import { queriedObjectState } from "@nextpress/globals/globals";
+import { SingleMetadata, SingleTemplate } from "@nextpress/template-heirarchy/page/single";
+import { PageMetadata, PageTemplate } from "@nextpress/template-heirarchy/page/page";
 
 /**
  * Resolves the singular page route and maps it to the template hierarchy to return Metadata.

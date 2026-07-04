@@ -1,9 +1,9 @@
-import { PostQueryArgs } from "nextpress/repository/postquery/post-query-args";
+import { PostQueryArgs } from "@nextpress/repository/postquery/post-query-args";
 import { Post } from "../../entities/post/post";
 import { IPost } from "../../entities/post/post.interface";
 import { EntityLoader } from "./entity-loader";
 import { EntityLoaderBase } from "./entity-loader-base";
-import { PostQuery } from "nextpress/repository/postquery/post-query";
+import { PostQuery } from "@nextpress/repository/postquery/post-query";
 
 class PostLoader extends EntityLoaderBase<IPost, PostQueryArgs> {
     private static _instance: PostLoader;

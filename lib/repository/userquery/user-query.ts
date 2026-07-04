@@ -2,7 +2,7 @@ import { IUser } from "../../entities/user/user.interface";
 import { EntityQuery } from "../../globals/entity-loader/entity-loader";
 import { sql } from "kysely";
 import { UserQueryArgs } from "./user-query-args";
-import { wpdb } from "nextpress/wpdb/wpdb";
+import { wpdb } from "@nextpress/wpdb/wpdb";
 
 /**
  * Executes database queries to retrieve user IDs and counts based on provided arguments.

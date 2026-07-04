@@ -23,7 +23,7 @@
       }
     ],
     "paths": {
-      "nextpress/*": ["./lib/*"]
+      "@nextpress/*": ["./lib/*"]
     }
   },
   "include": [

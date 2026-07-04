@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Script from "next/script";
-import { ksesPost } from "nextpress/services/utilities/kses-post";
+import { ksesPost } from "@nextpress/services/utilities/kses-post";
 
 type Props = {
     loggedInUserId?: number

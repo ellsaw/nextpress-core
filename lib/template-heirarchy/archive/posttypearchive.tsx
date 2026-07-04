@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { JSX } from "react";
 import { loadMetadata, loadTemplate } from "../_autoloader/template-autoloader";
 import { ArchiveMetadata, ArchiveTemplate } from "./archive";
-import { capitalizeFirstLetter } from "nextpress/services/utilities/capitalise-first-letter";
+import { capitalizeFirstLetter } from "@nextpress/services/utilities/capitalise-first-letter";
 
 /**
  * Loads the metadata for a Post Type Archive template based on the given post type.

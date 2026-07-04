@@ -1,7 +1,7 @@
-import { queriedObjectState } from "nextpress/globals/globals";
+import { queriedObjectState } from "@nextpress/globals/globals";
 import { MetadataResult, RouteProps, TemplateResult } from "../types";
 import { PostIndexPage } from "./post-index-page";
-import { PageMetadata, PageTemplate } from "nextpress/template-heirarchy/page/page";
+import { PageMetadata, PageTemplate } from "@nextpress/template-heirarchy/page/page";
 
 /**
  * Resolves the site front page route and maps it to the template hierarchy to return Metadata.

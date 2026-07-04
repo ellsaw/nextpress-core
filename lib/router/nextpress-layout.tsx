@@ -1,10 +1,10 @@
-import "nextpress/globals/globals";
+import "@nextpress/globals/globals";
 import "@/app/_css/globals.css";
 import { LayoutTemplate } from "@/app/_templates/layout";
 import { cookies, draftMode } from "next/headers";
 import fonts from "@/fonts";
-import { getLanguageAttributes } from "nextpress/services/metadata/get-language-attribute";
-import { RenderTheAdminBar } from "nextpress/ui/render-the-admin-bar";
+import { getLanguageAttributes } from "@nextpress/services/metadata/get-language-attribute";
+import { RenderTheAdminBar } from "@nextpress/ui/render-the-admin-bar";
 
 const fontClasses = fonts.map(font => font.className).join(' ');
 

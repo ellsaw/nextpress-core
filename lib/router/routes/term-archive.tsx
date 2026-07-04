@@ -1,10 +1,10 @@
 import { MetadataResult, RouteProps, TemplateResult } from "../types";
 import { getPageNumber } from "../helpers";
 import { notFound } from "next/navigation";
-import { queriedObjectState } from "nextpress/globals/globals";
-import { CategoryMetadata, CategoryTemplate } from "nextpress/template-heirarchy/archive/category";
-import { TagMetadata, TagTemplate } from "nextpress/template-heirarchy/archive/tag";
-import { TaxonomyMetadata, TaxonomyTemplate } from "nextpress/template-heirarchy/archive/taxonomy";
+import { queriedObjectState } from "@nextpress/globals/globals";
+import { CategoryMetadata, CategoryTemplate } from "@nextpress/template-heirarchy/archive/category";
+import { TagMetadata, TagTemplate } from "@nextpress/template-heirarchy/archive/tag";
+import { TaxonomyMetadata, TaxonomyTemplate } from "@nextpress/template-heirarchy/archive/taxonomy";
 
 /**
  * Resolves the term archive route and maps it to the template hierarchy to return Metadata.

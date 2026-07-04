@@ -1,5 +1,5 @@
-import { getThemeMods } from "nextpress/services/get-theme-mods";
-import { getBlogname } from "nextpress/services/metadata/get-blogname";
+import { getThemeMods } from "@nextpress/services/get-theme-mods";
+import { getBlogname } from "@nextpress/services/metadata/get-blogname";
 import { RenderAttachmentImage } from "./render-attachment-image";
 
 type Props = {

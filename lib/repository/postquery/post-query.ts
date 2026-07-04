@@ -3,8 +3,8 @@ import * as phpSerialize from "php-serialize";
 import { EntityQuery } from "../../globals/entity-loader/entity-loader";
 import { IPost } from "../../entities/post/post.interface";
 import { PostQueryArgs } from "./post-query-args";
-import { DB } from "nextpress/wpdb/wpdb.interface";
-import { wpdb } from "nextpress/wpdb/wpdb";
+import { DB } from "@nextpress/wpdb/wpdb.interface";
+import { wpdb } from "@nextpress/wpdb/wpdb";
 
 /**
  * Executes database queries to retrieve post IDs and counts based on provided arguments.

@@ -1,5 +1,5 @@
 import { Selectable } from "kysely";
-import { WpUser } from "nextpress/wpdb/wpdb.interface";
+import { WpUser } from "@nextpress/wpdb/wpdb.interface";
 
 /**
  * Represents user entity.

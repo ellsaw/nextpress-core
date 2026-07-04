@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { NotFoundMetadata, NotFoundTemplate } from "nextpress/template-heirarchy/not-found.tsx/not-found";
+import { NotFoundMetadata, NotFoundTemplate } from "@nextpress/template-heirarchy/not-found.tsx/not-found";
 
 /**
  * Generates the metadata for the generic Not Found page.

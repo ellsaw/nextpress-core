@@ -1,5 +1,5 @@
 declare module '@/nextpress.config' {
-    type NextpressConfig = import('nextpress/globals/nextpress-config/nextpress-config.interface').NextpressConfig;
+    type NextpressConfig = import('@nextpress/globals/nextpress-config/nextpress-config.interface').NextpressConfig;
 
     export const nextpressConfig: NextpressConfig
 }

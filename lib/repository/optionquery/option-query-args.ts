@@ -1,5 +1,5 @@
 import { ComparisonOperatorExpression, ReferenceExpression } from "kysely";
-import { DB } from "nextpress/wpdb/wpdb.interface";
+import { DB } from "@nextpress/wpdb/wpdb.interface";
 
 /**
  * Defines the arguments for querying options.
