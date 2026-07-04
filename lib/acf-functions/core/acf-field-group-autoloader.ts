@@ -19,7 +19,7 @@ export async function acfFieldGroupAutoloader(): Promise<NextpressFieldGroup[]> 
     for (const file of files) {
         if (!file.endsWith('.ts')) continue;
 
-        const imported = await import(`../../../../app/_templates/components/field-groups/${file}`);
+        const imported = await import(`@/app/_templates/components/field-groups/${file}`);
         const fieldGroup = imported.default;
 
         fieldGroups.push(fieldGroup);
