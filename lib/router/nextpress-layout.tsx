@@ -1,5 +1,4 @@
 import "@nextpress/globals/globals";
-import "@/app/_css/globals.css";
 import { LayoutTemplate } from "@/app/_templates/layout";
 import { cookies, draftMode } from "next/headers";
 import fonts from "@/fonts";

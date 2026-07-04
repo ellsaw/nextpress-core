@@ -11,7 +11,7 @@ import { NextpressFieldGroup } from '../types/acf-field-group';
  * @returns {Promise<NextpressFieldGroup[]>} A promise resolving to an array of loaded ACF field group configurations.
  */
 export async function acfFieldGroupAutoloader(): Promise<NextpressFieldGroup[]> {
-    const absolutePath = path.join(process.cwd(), 'src', 'app', '_templates', 'components', 'field-groups');
+    const absolutePath = path.join(process.cwd(), 'src', 'app', '_templates', 'field-groups');
     const files = fs.readdirSync(absolutePath);
 
     const fieldGroups: NextpressFieldGroup[] = [];
@@ -19,7 +19,7 @@ export async function acfFieldGroupAutoloader(): Promise<NextpressFieldGroup[]> 
     for (const file of files) {
         if (!file.endsWith('.ts')) continue;
 
-        const imported = await import(`@/app/_templates/components/field-groups/${file}`);
+        const imported = await import(`@/app/_templates/field-groups/${file}`);
         const fieldGroup = imported.default;
 
         fieldGroups.push(fieldGroup);

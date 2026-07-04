@@ -3,30 +3,39 @@ import path from 'path';
 import { NextpressComponent } from '../types/components/nextpress-component';
 
 /**
- * Autoloads ACF components dynamically from the templates directory.
+ * Autoloads ACF components dynamically from nested directories within the templates directory.
  * * **Requirements for it to work:**
- * Each `.tsx` file within the `src/app/_templates/components/` directory MUST export the following:
- * 1. `layout` (Named Export): The configuration for the ACF layout, typically defined using the `defineLayout` function.
- * 2. `default` (Default Export): The React component (JSX/TSX function) that renders the layout.
+ * Each `.tsx` file within `src/app/_templates/components/{any-dir}/` MUST export the following:
+ * 1. `layout` (Named Export): The configuration for the ACF layout.
+ * 2. `default` (Default Export): The React component that renders the layout.
  *
  * @returns {Promise<NextpressComponent[]>} A promise resolving to an array of mapped layout configurations and their respective components.
  */
 export async function acfComponentAutoloader(): Promise<NextpressComponent[]> {
-    const absolutePath = path.join(process.cwd(), 'src', 'app', '_templates', 'components');
-    const files = fs.readdirSync(absolutePath);
-
+    const basePath = path.join(process.cwd(), 'src', 'app', '_templates', 'components');
     const layouts: NextpressComponent[] = [];
 
-    for (const file of files) {
-        if (!file.endsWith('.tsx')) continue;
+    const items = fs.readdirSync(basePath, { withFileTypes: true });
 
-        const imported = await import(`@/app/_templates/components/${file}`);
+    for (const item of items) {
+        if (!item.isDirectory()) continue;
 
-        const layout = imported.layout;
-        const component = imported.default;
-        if (!layout || !component) continue;
+        const dirName = item.name;
+        const dirPath = path.join(basePath, dirName);
+        const files = fs.readdirSync(dirPath);
 
-        layouts.push({layout, Component: component});
+        for (const file of files) {
+            if (!file.endsWith('.tsx')) continue;
+
+            const imported = await import(`@/app/_templates/components/${dirName}/${file}`);
+
+            const layout = imported.layout;
+            const component = imported.default;
+
+            if (!layout || !component) continue;
+
+            layouts.push({ layout, Component: component });
+        }
     }
 
     return layouts;
