@@ -2760,7 +2760,7 @@ type NewLines = "wpautop" | "br" | ""
 type Choices =
     | Record<string, string>;
 /**
- * Value returned (value, label, or both as array)
+ * Value returned (value or label and value as array)
  */
 type ReturnFormatChoice = "value" | "label" | "array"
 /**

@@ -74,26 +74,26 @@ type MapFieldType<Field> =
         ? string | null
     : Field extends { type: 'textarea' }
         ? string | null
-    : Field extends { type: 'button_group' }
+    : Field extends { type: 'button_group' } & { choices: Record<string, string>}
         ? Field extends { return_format: 'array' }
-            ? ACFChoiceObject | null
-        : string | null
-    : Field extends { type: 'checkbox' }
+            ? ACFChoiceObject<Field> | null
+        : keyof Field['choices'] | null
+    : Field extends { type: 'checkbox' } & { choices: Record<string, string>}
         ? Field extends { return_format: 'array' }
-            ? ACFChoiceObject[]
-        : string[]
-    : Field extends { type: 'radio' }
+            ? ACFChoiceObject<Field>[]
+        : (keyof Field['choices'])[]
+    : Field extends { type: 'radio' } & { choices: Record<string, string>}
         ? Field extends { return_format: 'array' }
-            ? ACFChoiceObject | null
-        : string | null
-    : Field extends { type: 'select' }
+            ? ACFChoiceObject<Field> | null
+        : keyof Field['choices'] | null
+    : Field extends { type: 'select' } & { choices: Record<string, string>}
         ? Field extends { multiple: 1 }
             ? Field extends { return_format: 'array' }
-                ? ACFChoiceObject[]
-            : string[]
+                ? ACFChoiceObject<Field>[]
+            : (keyof Field['choices'])[]
         : Field extends { return_format: 'array' }
-            ? ACFChoiceObject | null
-        : string | null
+            ? ACFChoiceObject<Field> | null
+        : keyof Field['choices'] | null
     : Field extends { type: 'true_false' }
         ? boolean
     : Field extends { type: 'file' }
@@ -165,9 +165,9 @@ export type ACFLinkObject = {
     target: string
 }
 
-export type ACFChoiceObject = {
-    label?: string
-    value?: string,
+export type ACFChoiceObject<T extends {choices: Record<string, string>}> = {
+    label: T['choices'][keyof T['choices']] | null,
+    value: keyof T['choices'] | null
 }
 
 export type ACFGoogleMapsObject = {
