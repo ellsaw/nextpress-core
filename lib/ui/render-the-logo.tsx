@@ -18,7 +18,7 @@ export async function RenderTheLogo({ className }: Props) {
         <div className={className}>
             {logoId ?
                 <RenderAttachmentImage className="h-full w-full object-contain object-center" attachmentId={logoId} sizes="512px"/>
-            : <span className="text-4xl font-bold">{await getBlogname()}</span>}
+            : <span className="">{await getBlogname()}</span>}
         </div>
     )
 }

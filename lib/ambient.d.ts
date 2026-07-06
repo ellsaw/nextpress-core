@@ -5,9 +5,9 @@ declare module '@/nextpress.config' {
 }
 
 declare module '@/fonts' {
-    type NextFont = import('next/dist/compiled/@next/font').NextFont;
+    type NextpressFont = import('@nextpress/router/types').NextpressFont;
 
-    const fonts: NextFont[];
+    const fonts: NextpressFont[];
     export default fonts;
 }
 

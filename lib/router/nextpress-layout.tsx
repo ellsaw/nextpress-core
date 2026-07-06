@@ -5,7 +5,7 @@ import fonts from "@/fonts";
 import { getLanguageAttributes } from "@nextpress/services/metadata/get-language-attribute";
 import { RenderTheAdminBar } from "@nextpress/ui/render-the-admin-bar";
 
-const fontClasses = fonts.map(font => font.className).join(' ');
+const fontClasses = fonts.map(font => font.variable).join(' ');
 
 /**
  * The layout for the application.
