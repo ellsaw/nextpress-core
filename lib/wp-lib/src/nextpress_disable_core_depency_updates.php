@@ -7,22 +7,28 @@ namespace Nextpress;
  * Allows translations, other plugins, and themes to update normally.
  */
 
+// Block updates and notifications only for WordPress Core
 add_filter('pre_site_transient_update_core', function($transient) {
     if (!\is_object($transient)) {
         $transient = new \stdClass();
     }
 
-    if (property_exists($transient, 'updates')) {
-        $transient->updates = [];
+    $transient->updates = [];
+    $transient->response = [];
+
+    if (!isset($transient->version_checked)) {
+        global $wp_version;
+        $transient->version_checked = isset($wp_version) ? $wp_version : '';
     }
-    if (property_exists($transient, 'response')) {
-        $transient->response = [];
+
+    if (!isset($transient->last_checked)) {
+        $transient->last_checked = time();
     }
 
     return $transient;
 });
 
-// 2. Intercept Plugin update checks specifically for Secure Custom Fields
+// Intercept Plugin update checks specifically for Secure Custom Fields
 add_filter('site_transient_update_plugins', function($transient) {
     if (!\is_object($transient) || !isset($transient->response)) {
         return $transient;
@@ -39,7 +45,7 @@ add_filter('site_transient_update_plugins', function($transient) {
     return $transient;
 });
 
-// 3. Block automatic background updates for Core and SCF
+// Block automatic background updates for Core and SCF
 add_filter('auto_update_core', '__return_false');
 add_filter('auto_update_plugin', function($update, $item) {
     if (\is_object($item) && isset($item->plugin) && $item->plugin === 'advanced-custom-fields/acf.php') {
