@@ -11,10 +11,10 @@ export async function startComposer(composerArgs, callback) {
         if (isCleaningUp) return;
         isCleaningUp = true;
 
-        console.log('\nStopping Nextpress services...');
+        console.log('\nStopping Nextpress services...\n');
         try {
             await runCommand('docker', [...composerArgs, 'down']);
-            console.log('Nextpress services stopped successfully.');
+            console.log('\nNextpress services stopped successfully.');
         } catch (err) {
             console.error(`Error during cleanup: ${err.message}`);
         }

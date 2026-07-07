@@ -11,6 +11,7 @@ require_once __DIR__ . '/nextpress_revalidate_frontend.php';
 require_once __DIR__ . '/nextpress_remove_menu_pages.php';
 require_once __DIR__ . '/nextpress_remove_comments.php';
 require_once __DIR__ . '/nextpress_disable_core_depency_updates.php';
+require_once __DIR__ . '/nextpress_dev_mailer_setup.php';
 require_once __DIR__ . '/theme.php';
 
 require_once __DIR__ . '/acf/acf.php';
