@@ -6,8 +6,7 @@
     "skipLibCheck": true,
     "strict": true,
     "noEmit": false,
-    "rootDir": "./lib",
-    "outDir": "./dist",
+    "rootDir": "lib/nextjs-lib",
     "declaration": true,
     "esModuleInterop": true,
     "module": "esnext",
@@ -23,16 +22,13 @@
       }
     ],
     "paths": {
-      "@nextpress/*": ["./lib/*"]
+      "@nextpress/*": ["./lib/nextjs-lib/*"]
     }
   },
   "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts",
-    ".next/dev/types/**/*.ts",
-    "**/*.mts"
+    "lib/nextjs-lib/**/*.ts",
+    "lib/nextjs-lib/**/*.tsx",
+    "lib/nextjs-lib/**/*.mts"
   ],
   "exclude": ["node_modules", "dist"]
 }

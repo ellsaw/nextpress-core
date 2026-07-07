@@ -1,0 +1,69 @@
+services:
+  wordpress:
+    command: >
+      sh -c "
+        # Check if Xdebug is already compiled. If not, install it quietly.
+        if [ ! -f /usr/local/lib/php/extensions/*/xdebug.so ]; then
+          pecl install xdebug > /dev/null && docker-php-ext-enable xdebug;
+        fi;
+
+        echo 'ServerName localhost' >> /etc/apache2/apache2.conf;
+        docker-entrypoint.sh apache2-foreground;
+      "
+    volumes:
+    - ./node_modules/nextpress-core/lib/container-lib/mail.dev.ini:/usr/local/etc/php/conf.d/mail.ini:ro
+    environment:
+      XDEBUG_MODE: debug
+      XDEBUG_SESSION: 1
+      XDEBUG_TRIGGER: 1
+      XDEBUG_CONFIG: "client_host=host.docker.internal client_port=9003 start_with_request=yes log_level=0"
+      WORDPRESS_DEBUG: true
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+  next-js:
+    build:
+      target: development
+    develop:
+      watch:
+        - action: rebuild
+          path: ./next-js/package.json
+        - action: sync
+          path: ./next-js
+          target: /app
+          ignore:
+            - node_modules/
+            - .next/
+            - src/lib/nextpress/types/wpdb/
+            - package.json
+  mailpit:
+    image: axllent/mailpit:latest
+    depends_on:
+      wordpress:
+        condition: service_healthy
+    environment:
+      - MP_WEBROOT=/mailpit-admin/
+      - MP_API_CORS=http://localhost:8080
+    restart: always
+    ports:
+      - "8025:8025"
+      - "1025:1025"
+  gateway:
+    depends_on:
+      mailpit:
+        condition: service_started
+  ready-check:
+    command: >
+      sh -c '
+        printf "\n"
+        printf "\033[92m===============================================\n"
+        printf "\033[92mDEPLOYMENT SUCCESSFUL\033[0m\n"
+        printf "\033[92mOpen site: ${WP_SITE_URL}\033[0m\n"
+        printf "\033[92mWP Admin: ${WP_SITE_URL}/wp-admin\033[0m\n"
+        printf "\033[92mDB Admin: ${WP_SITE_URL}/db-admin\033[0m\n"
+        printf "\033[92mMailpit Admin: ${WP_SITE_URL}/mailpit-admin\033[0m\n"
+        printf "\033[92m===============================================\033[0m\n"
+        printf "\033[92mDEVELOPMENT ENVIRONMENT ACTIVE\033[0m\n"
+        printf "\033[92mWatching for changes in next-js\033[0m\n"
+        printf "\033[92m===============================================\033[0m\n"
+        printf "\n"
+      '

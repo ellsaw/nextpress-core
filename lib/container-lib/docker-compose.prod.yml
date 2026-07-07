@@ -1,0 +1,23 @@
+services:
+  wordpress:
+    command: sh -c "echo 'ServerName localhost' >> /etc/apache2/apache2.conf && docker-entrypoint.sh apache2-foreground"
+    volumes:
+    - ./node_modules/nextpress-core/lib/container-lib/mail.prod.ini:/usr/local/etc/php/conf.d/mail.ini:ro
+    environment:
+      WORDPRESS_DEBUG: true
+  next-js:
+    build:
+      target: production
+  ready-check:
+    command: >
+      sh -c '
+        printf "\n"
+        printf "\033[92m===============================================\n"
+        printf "\033[92mDEPLOYMENT SUCCESSFUL\033[0m\n"
+        printf "\033[92mOpen site: ${WP_SITE_URL}\033[0m\n"
+        printf "\033[92mWP Admin: ${WP_SITE_URL}/wp-admin\033[0m\n"
+        printf "\033[92mDB Admin: ${WP_SITE_URL}/db-admin\033[0m\n"
+        printf "\033[92m===============================================\033[0m\n"
+        printf "\n"
+      '
+
