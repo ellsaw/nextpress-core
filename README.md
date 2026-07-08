@@ -1,4 +1,4 @@
 # Nextpress Core
-`npm i -D nextpress-core`
+`npm i nextpress-core`
 
 https://github.com/ellsaw/nextpress
