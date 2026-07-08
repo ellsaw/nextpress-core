@@ -7,8 +7,8 @@ add_action('admin_menu', function() {
 
     // Create a brand new top-level menu item for Customize
     add_menu_page(
-        'Customize',                           // Page title
-        'Customize',                           // Menu title
+        __('Customize'),                       // Page title
+        __('Customize'),                       // Menu title
         'edit_theme_options',                  // Capability required to see it
         'customize.php',                       // Direct link to the Customizer
         '',                                    // No function needed for an existing file

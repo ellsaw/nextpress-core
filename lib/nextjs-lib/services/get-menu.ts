@@ -1,18 +1,18 @@
 import { IMenuItem } from "../entities/post/post.interface";
 import { getThemeMods } from "./get-theme-mods";
 
-type Menu = {
+export type NextpressMenu = {
     menuItem: IMenuItem,
-    children: Menu[]
+    children: NextpressMenu[]
 }
 
 /**
  * Retrieves a menu by its location identifier.
  *
  * @param {string} menuLocation - The location identifier of the menu.
- * @returns {Promise<Menu[] | undefined>} An array of menu items representing the menu tree, or undefined if the menu is not found.
+ * @returns {Promise<NextpressMenu[] | undefined>} An array of menu items representing the menu tree, or undefined if the menu is not found.
  */
-export async function getMenu(menuLocation: string): Promise<Menu[] | undefined> {
+export async function getMenu(menuLocation: string): Promise<NextpressMenu[] | undefined> {
     const navMenuLocations = await getThemeMods('nav_menu_locations');
     if (!navMenuLocations || typeof navMenuLocations !== 'object') return;
 
@@ -40,8 +40,8 @@ export async function getMenu(menuLocation: string): Promise<Menu[] | undefined>
         }
     }
 
-    const map = new Map<number, Menu>();
-    const tree: Menu[] = [];
+    const map = new Map<number, NextpressMenu>();
+    const tree: NextpressMenu[] = [];
 
     for (const item of menuItems) {
         if (!item.menuItemAttributes) continue;
@@ -71,7 +71,7 @@ export async function getMenu(menuLocation: string): Promise<Menu[] | undefined>
             menuItemAttributes
         };
 
-        const node: Menu = {
+        const node: NextpressMenu = {
             menuItem: safeItem,
             children: []
         };

@@ -23,7 +23,7 @@ declare global {
         fieldGroup: T,
         selector: K,
         location?: Location
-    ) => Promise<FieldProps<T>[K]>;
+    ) => Promise<FieldProps<T>[K] | undefined>;
 }
 
 globalThis.getField = async (fieldGroup, selector, location) => {
@@ -41,7 +41,7 @@ globalThis.getField = async (fieldGroup, selector, location) => {
             //     break;
         }
     }
-    if (!location) return [];
+    if (!location) return;
 
     const values = await (async () => {
         if (location === 'options') {
