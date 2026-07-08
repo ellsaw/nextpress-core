@@ -2,7 +2,7 @@ import { IMenuItem } from "../entities/post/post.interface";
 import { getThemeMods } from "./get-theme-mods";
 
 export type NextpressMenu = {
-    menuItem: IMenuItem,
+    item: IMenuItem,
     children: NextpressMenu[]
 }
 
@@ -72,7 +72,7 @@ export async function getMenu(menuLocation: string): Promise<NextpressMenu[] | u
         };
 
         const node: NextpressMenu = {
-            menuItem: safeItem,
+            item: safeItem,
             children: []
         };
 
@@ -96,7 +96,7 @@ export async function getMenu(menuLocation: string): Promise<NextpressMenu[] | u
 
         if (parentNode) {
             parentNode.children.push(currentNode);
-            map.set(parentNode.menuItem.ID, parentNode);
+            map.set(parentNode.item.ID, parentNode);
         }
     }
 

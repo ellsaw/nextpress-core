@@ -33,3 +33,5 @@ write(
     path.join(__dirname, '..', 'lib', 'wp-lib', 'src'),
     path.join(process.cwd(), 'wp', 'wp-content', 'themes', 'nextpress_theme', '.nextpress')
 )
+
+console.log('Nextpress installation successful.');
