@@ -41,8 +41,8 @@ services:
       wordpress:
         condition: service_healthy
     environment:
-      - MP_WEBROOT=/mailpit-admin/
-      - MP_API_CORS=http://localhost:8080
+      MP_WEBROOT: /mailpit-admin/
+      MP_API_CORS: ${WP_SITE_URL}
     restart: always
     ports:
       - "8025:8025"
