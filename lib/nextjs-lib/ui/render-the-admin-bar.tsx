@@ -66,7 +66,7 @@ export function RenderTheAdminBar({ loggedInUserId }: Props) {
             <Script src={adminBar.assets.js.admin_bar}/>
 
             <div
-                className={`fixed top-0 left-0 right-0 transform transition-all duration-300 ease-in-out ${
+                className={`fixed top-0 left-0 right-0 z-9999 transform transition-all duration-300 ease-in-out ${
                     isMounted
                         ? "scale-y-100"
                         : "scale-y-0"

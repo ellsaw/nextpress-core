@@ -21,15 +21,16 @@ export function nextpressProxy(request: NextRequest): NextResponse {
         response.cookies.set('nextpress_logged_in_user_id', loggedInUserId || '0');
         return response;
     }
-    if (request.cookies.has('nextpress_logged_in_user_id')) {
-        return NextResponse.next();
-    }
 
     const cookies = request.cookies;
 
     const hasWordpressCookie = cookies.getAll().some(cookie =>
         cookie.name.startsWith('wordpress_logged_in_')
     );
+
+    if (request.cookies.has('nextpress_logged_in_user_id') && hasWordpressCookie) {
+        return NextResponse.next();
+    }
 
     if (hasWordpressCookie) {
         const currentPath = url.pathname + url.search;
