@@ -61,13 +61,13 @@ export async function mapField(field: NextpressField, rawValues: ACFRawValues): 
         case 'oembed':
         case 'wysiwyg':
         case 'file':
-        case 'image':
             return rawValues.get(field.name);
 
         /**
          * Numeric fields.
          * Casts the raw string from the database into a strict JavaScript Number.
          */
+        case 'image':
         case 'number':
         case 'range':
             return Number(rawValues.get(field.name));
@@ -146,13 +146,13 @@ export async function mapField(field: NextpressField, rawValues: ACFRawValues): 
 
         /**
          * Gallery field.
-         * Deserializes the PHP array of image IDs or objects.
+         * Deserializes the PHP array of image IDs.
          */
         case 'gallery':
             const galleryValues = parsePhp(rawValues.get(field.name));
             if (!Array.isArray(galleryValues)) return;
 
-            return galleryValues;
+            return galleryValues.map(image => Number(image)).filter(Boolean);
 
         /**
          * Flexible Content field.
