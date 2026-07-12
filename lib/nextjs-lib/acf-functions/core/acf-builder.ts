@@ -5,12 +5,15 @@ import { NextpressLayout, ACFLayout } from "../types/acf-layout";
 /**
  * Class representing ACF builder.
  */
-export class ACFBuilder
-{
+export class ACFBuilder {
     /** Array of ACF field groups. */
     private fieldGroups: ACFFieldGroup[] = [];
 
-    public constructor() {};
+    private fieldKeyMap: Map<string, string>;
+
+    public constructor() {
+        this.fieldKeyMap = new Map();
+    };
 
     /**
      * Gets built field groups.
@@ -37,11 +40,16 @@ export class ACFBuilder
      * @returns {this} Current instance.
      */
     public registerFieldGroups(fieldGroups: NextpressFieldGroup[]): this {
-        const keyedFieldGroups: ACFFieldGroup[] = fieldGroups.map(fieldGroup => ({
-            ...fieldGroup,
-            key: `group_${this.formatKeySuffix(fieldGroup.title)}`,
-            fields: this.setFieldKeys(fieldGroup.fields, fieldGroup.title),
-        }));
+        let keyedFieldGroups: ACFFieldGroup[] = [];
+
+        // Run twice to double check conditionals
+        for (let i = 0; i < 2; i++) {
+            keyedFieldGroups = fieldGroups.map(fieldGroup => ({
+                ...fieldGroup,
+                key: `group_${this.formatKeySuffix(fieldGroup.title)}`,
+                fields: this.setFieldKeys(fieldGroup.fields, fieldGroup.title),
+            }));
+        }
 
         this.fieldGroups = [...this.fieldGroups, ...keyedFieldGroups];
 
@@ -67,12 +75,30 @@ export class ACFBuilder
                 ? this.setLayoutKeys(field.layouts, keySuffix)
                 : undefined;
 
+            const key = `field_${keySuffix}`;
+
+            this.fieldKeyMap.set(field.name, key);
+
+            if (field.conditional_logic) {
+                field.conditional_logic = field.conditional_logic.map((group) => {
+                    return group.map((cl) => {
+                        const resolvedKey = this.fieldKeyMap.get(cl.field);
+
+                        return {
+                            ...cl,
+                            field: resolvedKey !== undefined ? resolvedKey : cl.field
+                        };
+                    });
+                });
+            }
+
             return {
                 ...field,
-                key: `field_${keySuffix}`,
+                key,
                 sub_fields: childFields,
-                layouts: childLayouts
-            }});
+                layouts: childLayouts,
+            }
+        });
     }
 
     /**
@@ -94,7 +120,8 @@ export class ACFBuilder
                 ...layout,
                 key: `layout_${keySuffix}`,
                 sub_fields: childFields || [],
-        }})
+            }
+        })
     }
 
     /**

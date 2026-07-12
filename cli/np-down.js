@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import path from 'path';
 import { runCommand } from './run-command.js';
 import { containerLibPath } from './start-composer.js';

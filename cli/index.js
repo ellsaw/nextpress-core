@@ -8,4 +8,5 @@ program
     .command('run', 'Run Nextpress')
     .command('down', 'Terminate Nextpress')
     .command('log', 'Log Nextpress in production')
+    .command('gen', 'Generate Template')
     .parse(process.argv);

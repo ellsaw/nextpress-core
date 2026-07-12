@@ -47,7 +47,7 @@ export type ACFField =
         /**
          * Conditional logic rules for field visibility. False/0/empty string to disable, or array of rule groups.
          */
-        conditional_logic?: boolean | number | string | unknown[]
+        conditional_logic?: ConditionalLogic
         /**
          * Wrapper element settings
          */
@@ -131,7 +131,7 @@ export type ACFField =
         /**
          * Conditional logic rules for field visibility. False/0/empty string to disable, or array of rule groups.
          */
-        conditional_logic?: boolean | number | string | unknown[]
+        conditional_logic?: ConditionalLogic
         /**
          * Wrapper element settings
          */
@@ -204,7 +204,7 @@ export type ACFField =
         /**
          * Conditional logic rules for field visibility. False/0/empty string to disable, or array of rule groups.
          */
-        conditional_logic?: boolean | number | string | unknown[]
+        conditional_logic?: ConditionalLogic
         /**
          * Wrapper element settings
          */
@@ -277,7 +277,7 @@ export type ACFField =
         /**
          * Conditional logic rules for field visibility. False/0/empty string to disable, or array of rule groups.
          */
-        conditional_logic?: boolean | number | string | unknown[]
+        conditional_logic?: ConditionalLogic
         /**
          * Wrapper element settings
          */
@@ -356,7 +356,7 @@ export type ACFField =
         /**
          * Conditional logic rules for field visibility. False/0/empty string to disable, or array of rule groups.
          */
-        conditional_logic?: boolean | number | string | unknown[]
+        conditional_logic?: ConditionalLogic
         /**
          * Wrapper element settings
          */
@@ -445,7 +445,7 @@ export type ACFField =
         /**
          * Conditional logic rules for field visibility. False/0/empty string to disable, or array of rule groups.
          */
-        conditional_logic?: boolean | number | string | unknown[]
+        conditional_logic?: ConditionalLogic
         /**
          * Wrapper element settings
          */
@@ -516,7 +516,7 @@ export type ACFField =
         /**
          * Conditional logic rules for field visibility. False/0/empty string to disable, or array of rule groups.
          */
-        conditional_logic?: boolean | number | string | unknown[]
+        conditional_logic?: ConditionalLogic
         /**
          * Wrapper element settings
          */
@@ -583,7 +583,7 @@ export type ACFField =
         /**
          * Conditional logic rules for field visibility. False/0/empty string to disable, or array of rule groups.
          */
-        conditional_logic?: boolean | number | string | unknown[]
+        conditional_logic?: ConditionalLogic
         /**
          * Wrapper element settings
          */
@@ -662,7 +662,7 @@ export type ACFField =
         /**
          * Conditional logic rules for field visibility. False/0/empty string to disable, or array of rule groups.
          */
-        conditional_logic?: boolean | number | string | unknown[]
+        conditional_logic?: ConditionalLogic
         /**
          * Wrapper element settings
          */
@@ -728,7 +728,7 @@ export type ACFField =
         /**
          * Conditional logic rules for field visibility. False/0/empty string to disable, or array of rule groups.
          */
-        conditional_logic?: boolean | number | string | unknown[]
+        conditional_logic?: ConditionalLogic
         /**
          * Wrapper element settings
          */
@@ -807,7 +807,7 @@ export type ACFField =
         /**
          * Conditional logic rules for field visibility. False/0/empty string to disable, or array of rule groups.
          */
-        conditional_logic?: boolean | number | string | unknown[]
+        conditional_logic?: ConditionalLogic
         /**
          * Wrapper element settings
          */
@@ -875,7 +875,7 @@ export type ACFField =
         /**
          * Conditional logic rules for field visibility. False/0/empty string to disable, or array of rule groups.
          */
-        conditional_logic?: boolean | number | string | unknown[]
+        conditional_logic?: ConditionalLogic
         /**
          * Wrapper element settings
          */
@@ -943,7 +943,7 @@ export type ACFField =
         /**
          * Conditional logic rules for field visibility. False/0/empty string to disable, or array of rule groups.
          */
-        conditional_logic?: boolean | number | string | unknown[]
+        conditional_logic?: ConditionalLogic
         /**
          * Wrapper element settings
          */
@@ -1008,7 +1008,7 @@ export type ACFField =
         /**
          * Conditional logic rules for field visibility. False/0/empty string to disable, or array of rule groups.
          */
-        conditional_logic?: boolean | number | string | unknown[]
+        conditional_logic?: ConditionalLogic
         /**
          * Wrapper element settings
          */
@@ -1079,7 +1079,7 @@ export type ACFField =
         /**
          * Conditional logic rules for field visibility. False/0/empty string to disable, or array of rule groups.
          */
-        conditional_logic?: boolean | number | string | unknown[]
+        conditional_logic?: ConditionalLogic
         /**
          * Wrapper element settings
          */
@@ -1161,7 +1161,7 @@ export type ACFField =
         /**
          * Conditional logic rules for field visibility. False/0/empty string to disable, or array of rule groups.
          */
-        conditional_logic?: boolean | number | string | unknown[]
+        conditional_logic?: ConditionalLogic
         /**
          * Wrapper element settings
          */
@@ -1237,7 +1237,7 @@ export type ACFField =
         /**
          * Conditional logic rules for field visibility. False/0/empty string to disable, or array of rule groups.
          */
-        conditional_logic?: boolean | number | string | unknown[]
+        conditional_logic?: ConditionalLogic
         /**
          * Wrapper element settings
          */
@@ -1322,7 +1322,7 @@ export type ACFField =
         /**
          * Conditional logic rules for field visibility. False/0/empty string to disable, or array of rule groups.
          */
-        conditional_logic?: boolean | number | string | unknown[]
+        conditional_logic?: ConditionalLogic
         /**
          * Wrapper element settings
          */
@@ -1405,7 +1405,7 @@ export type ACFField =
         /**
          * Conditional logic rules for field visibility. False/0/empty string to disable, or array of rule groups.
          */
-        conditional_logic?: boolean | number | string | unknown[]
+        conditional_logic?: ConditionalLogic
         /**
          * Wrapper element settings
          */
@@ -1473,7 +1473,7 @@ export type ACFField =
         /**
          * Conditional logic rules for field visibility. False/0/empty string to disable, or array of rule groups.
          */
-        conditional_logic?: boolean | number | string | unknown[]
+        conditional_logic?: ConditionalLogic
         /**
          * Wrapper element settings
          */
@@ -1552,7 +1552,7 @@ export type ACFField =
         /**
          * Conditional logic rules for field visibility. False/0/empty string to disable, or array of rule groups.
          */
-        conditional_logic?: boolean | number | string | unknown[]
+        conditional_logic?: ConditionalLogic
         /**
          * Wrapper element settings
          */
@@ -1625,7 +1625,7 @@ export type ACFField =
         /**
          * Conditional logic rules for field visibility. False/0/empty string to disable, or array of rule groups.
          */
-        conditional_logic?: boolean | number | string | unknown[]
+        conditional_logic?: ConditionalLogic
         /**
          * Wrapper element settings
          */
@@ -1696,7 +1696,7 @@ export type ACFField =
         /**
          * Conditional logic rules for field visibility. False/0/empty string to disable, or array of rule groups.
          */
-        conditional_logic?: boolean | number | string | unknown[]
+        conditional_logic?: ConditionalLogic
         /**
          * Wrapper element settings
          */
@@ -1776,7 +1776,7 @@ export type ACFField =
         /**
          * Conditional logic rules for field visibility. False/0/empty string to disable, or array of rule groups.
          */
-        conditional_logic?: boolean | number | string | unknown[]
+        conditional_logic?: ConditionalLogic
         /**
          * Wrapper element settings
          */
@@ -1847,7 +1847,7 @@ export type ACFField =
         /**
          * Conditional logic rules for field visibility. False/0/empty string to disable, or array of rule groups.
          */
-        conditional_logic?: boolean | number | string | unknown[]
+        conditional_logic?: ConditionalLogic
         /**
          * Wrapper element settings
          */
@@ -1926,7 +1926,7 @@ export type ACFField =
         /**
          * Conditional logic rules for field visibility. False/0/empty string to disable, or array of rule groups.
          */
-        conditional_logic?: boolean | number | string | unknown[]
+        conditional_logic?: ConditionalLogic
         /**
          * Wrapper element settings
          */
@@ -1994,7 +1994,7 @@ export type ACFField =
         /**
          * Conditional logic rules for field visibility. False/0/empty string to disable, or array of rule groups.
          */
-        conditional_logic?: boolean | number | string | unknown[]
+        conditional_logic?: ConditionalLogic
         /**
          * Wrapper element settings
          */
@@ -2069,7 +2069,7 @@ export type ACFField =
         /**
          * Conditional logic rules for field visibility. False/0/empty string to disable, or array of rule groups.
          */
-        conditional_logic?: boolean | number | string | unknown[]
+        conditional_logic?: ConditionalLogic
         /**
          * Wrapper element settings
          */
@@ -2152,7 +2152,7 @@ export type ACFField =
         /**
          * Conditional logic rules for field visibility. False/0/empty string to disable, or array of rule groups.
          */
-        conditional_logic?: boolean | number | string | unknown[]
+        conditional_logic?: ConditionalLogic
         /**
          * Wrapper element settings
          */
@@ -2215,7 +2215,7 @@ export type ACFField =
         /**
          * Conditional logic rules for field visibility. False/0/empty string to disable, or array of rule groups.
          */
-        conditional_logic?: boolean | number | string | unknown[]
+        conditional_logic?: ConditionalLogic
         /**
          * Wrapper element settings
          */
@@ -2287,7 +2287,7 @@ export type ACFField =
         /**
          * Conditional logic rules for field visibility. False/0/empty string to disable, or array of rule groups.
          */
-        conditional_logic?: boolean | number | string | unknown[]
+        conditional_logic?: ConditionalLogic
         /**
          * Wrapper element settings
          */
@@ -2354,7 +2354,7 @@ export type ACFField =
         /**
          * Conditional logic rules for field visibility. False/0/empty string to disable, or array of rule groups.
          */
-        conditional_logic?: boolean | number | string | unknown[]
+        conditional_logic?: ConditionalLogic
         /**
          * Wrapper element settings
          */
@@ -2425,7 +2425,7 @@ export type ACFField =
         /**
          * Conditional logic rules for field visibility. False/0/empty string to disable, or array of rule groups.
          */
-        conditional_logic?: boolean | number | string | unknown[]
+        conditional_logic?: ConditionalLogic
         /**
          * Wrapper element settings
          */
@@ -2501,7 +2501,7 @@ export type ACFField =
         /**
          * Conditional logic rules for field visibility. False/0/empty string to disable, or array of rule groups.
          */
-        conditional_logic?: boolean | number | string | unknown[]
+        conditional_logic?: ConditionalLogic
         /**
          * Wrapper element settings
          */
@@ -2581,7 +2581,7 @@ export type ACFField =
         /**
          * Conditional logic rules for field visibility. False/0/empty string to disable, or array of rule groups.
          */
-        conditional_logic?: boolean | number | string | unknown[]
+        conditional_logic?: ConditionalLogic
         /**
          * Wrapper element settings
          */
@@ -2671,7 +2671,7 @@ export type ACFField =
         /**
          * Conditional logic rules for field visibility. False/0/empty string to disable, or array of rule groups.
          */
-        conditional_logic?: boolean | number | string | unknown[]
+        conditional_logic?: ConditionalLogic
         /**
          * Wrapper element settings
          */
@@ -2851,3 +2851,11 @@ type TaxonomyFilter = unknown[]
  * Target fields for bidirectional relationships
  */
 type BidirectionalTarget = unknown[]
+/**
+ * Target fields for bidirectional relationships
+ */
+type ConditionalLogic = {
+    field: string,
+    operator: '==' | '!=' | '>' |'<' | '>=' | '<='
+    value: string
+}[][];
