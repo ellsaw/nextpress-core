@@ -3,7 +3,6 @@ import { NextpressLayout } from "../types/acf-layout";
 /**
  * Defines layout configuration and applies typing.
  *
- * @template T - Layout type extending NextpressLayout.
  * @param {T} layout - Layout configuration object.
  * @returns {T} Passed layout configuration object.
  */

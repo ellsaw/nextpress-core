@@ -40,15 +40,16 @@ export class ACFBuilder {
      * @returns {this} Current instance.
      */
     public registerFieldGroups(fieldGroups: NextpressFieldGroup[]): this {
-        let keyedFieldGroups: ACFFieldGroup[] = [];
+        const keyedFieldGroups: ACFFieldGroup[] = [];
 
-        // Run twice to double check conditionals
-        for (let i = 0; i < 2; i++) {
-            keyedFieldGroups = fieldGroups.map(fieldGroup => ({
+        for (const fieldGroup of fieldGroups) {
+            keyedFieldGroups.push({
                 ...fieldGroup,
                 key: `group_${this.formatKeySuffix(fieldGroup.title)}`,
                 fields: this.setFieldKeys(fieldGroup.fields, fieldGroup.title),
-            }));
+            });
+
+            this.fieldKeyMap.clear();
         }
 
         this.fieldGroups = [...this.fieldGroups, ...keyedFieldGroups];
@@ -64,7 +65,9 @@ export class ACFBuilder {
      * @returns {ACFField[]} Array of fields with generated keys.
      */
     private setFieldKeys(fields: NextpressField[], parentName: string): ACFField[] {
-        return fields.map(field => {
+        const fieldsResult: ACFField[] = [];
+
+        for (const field of fields) {
             const keySuffix = this.formatKeySuffix(`${parentName}_${field.name}`);
 
             const childFields = field.sub_fields
@@ -79,8 +82,8 @@ export class ACFBuilder {
 
             this.fieldKeyMap.set(field.name, key);
 
-            if (field.conditional_logic) {
-                field.conditional_logic = field.conditional_logic.map((group) => {
+            const conditionalLogic = field.conditional_logic
+                ? field.conditional_logic.map((group) => {
                     return group.map((cl) => {
                         const resolvedKey = this.fieldKeyMap.get(cl.field);
 
@@ -89,16 +92,19 @@ export class ACFBuilder {
                             field: resolvedKey !== undefined ? resolvedKey : cl.field
                         };
                     });
-                });
-            }
+                })
+                : undefined;
 
-            return {
+            fieldsResult.push({
                 ...field,
                 key,
                 sub_fields: childFields,
                 layouts: childLayouts,
-            }
-        });
+                ...(conditionalLogic && { conditional_logic: conditionalLogic }),
+            } as any);
+        }
+
+        return fieldsResult;
     }
 
     /**
@@ -109,19 +115,23 @@ export class ACFBuilder {
      * @returns {ACFLayout[]} Array of layouts with generated keys.
      */
     private setLayoutKeys(layouts: NextpressLayout[], parentName: string): ACFLayout[] {
-        return layouts.map(layout => {
+        const layoutResults: ACFLayout[] = [];
+
+        for (const layout of layouts) {
             const keySuffix = this.formatKeySuffix(`${parentName}_${layout.name}`);
 
             const childFields = layout.sub_fields
                 ? this.setFieldKeys(layout.sub_fields, `${parentName}_${layout.name}`)
                 : undefined;
 
-            return {
+            layoutResults.push({
                 ...layout,
                 key: `layout_${keySuffix}`,
                 sub_fields: childFields || [],
-            }
-        })
+            })
+        }
+
+        return layoutResults;
     }
 
     /**

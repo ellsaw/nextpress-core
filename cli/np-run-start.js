@@ -17,7 +17,7 @@ const composeBaseArgs = [
 async function start() {
     await startComposer(composeBaseArgs,
         async () => {
-            console.log('Running Nextpress in production mode');
+            console.log('Running Nextpress in production mode (This can take a while)');
             const dockerArgs = [
                 ...composeBaseArgs,
                 'up',

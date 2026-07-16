@@ -3,7 +3,6 @@ import { NextpressFieldGroup } from "../types/acf-field-group";
 /**
  * Defines field group configuration and applies typing.
  *
- * @template T - Field group type extending NextpressFieldGroup.
  * @param {T} layout - Field group configuration object.
  * @returns {T} Passed field group configuration object.
  */

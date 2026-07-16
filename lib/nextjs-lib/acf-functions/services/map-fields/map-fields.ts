@@ -16,7 +16,7 @@ const components = await acfComponentAutoloader();
  * @returns {unknown[] | { [key: string]: unknown }} Parsed object or array.
  */
 function parsePhp(string?: string): unknown[] | { [key: string]: unknown } {
-    return unserialize(string ?? 'a:0:{}') ?? [];
+    return unserialize(string || 'a:0:{}') ?? [];
 }
 
 /**
@@ -348,6 +348,7 @@ export async function mapField(field: NextpressField, rawValues: ACFRawValues): 
  * @returns {Promise<{ [key: string]: any }>} Promise resolving to layout values object.
  */
 export async function mapLayout(layout: NextpressLayout, rawValues: ACFRawValues)  {
+    if (!layout) return;
     const values: { [key: string]: any } = {};
 
     for (const subField of layout.sub_fields) {
